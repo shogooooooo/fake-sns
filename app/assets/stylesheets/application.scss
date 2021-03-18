@@ -1,0 +1,64 @@
+@import 'authentication';
+
+html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  background-color: #FFF;
+  font-size: 16px;
+  color: #333;
+  font-family: Poppins;
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+}
+
+.form-container{
+  margin: 0 16px;
+}
+
+.text{
+  line-height: 24px;
+  width: 100%;
+}
+
+.submit{
+  background-color: #FFE600;
+  margin: 80px 0;
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  border: none;
+
+  &_login{
+    background-color: #FFE600;
+    margin: 153px 0;
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    border: none;
+  }
+}
+
+
