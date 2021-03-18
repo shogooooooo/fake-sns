@@ -1,0 +1,29 @@
+.authentication{
+  &_image{
+    width: 375px;
+    height: 298px;
+    margin-bottom: 25px;
+  }
+
+  &_label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    color: #979797;
+    opacity: 0.9;
+  }
+
+  &_text-group{
+    margin: 10px 0;
+    border-bottom: 1px solid #9E9E9E;
+  }
+}
+
+.forgot-password{
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+  color: #CCCCCC;
+  text-align: right;
+}

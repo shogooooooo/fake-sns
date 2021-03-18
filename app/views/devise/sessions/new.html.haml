@@ -1,13 +1,16 @@
-%div{:clas => "container"}
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
-    = render "devise/shared/links"
-    .actions
-      = f.submit "LOGIN"
+.container
+  =image_tag 'Rectangle.png', class: 'authentication_image'
+  .form-container
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field.authentication_text-group
+        = f.label :email, class: 'authentication_label'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text'
+      .field.authentication_text-group
+        = f.label :password, class: 'authentication_label'
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: 'text'
+      .forgot-password
+        = render "devise/shared/links"
+      .actions
+        = f.submit "LOGIN", class: 'submit_login'
