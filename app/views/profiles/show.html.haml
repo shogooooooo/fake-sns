@@ -1,1 +1,22 @@
-%p profile
+.container 
+  .profile_back
+    - if !current_page?(root_path)
+      = link_to :back do
+        = image_tag 'Group.png', class: 'header_back'
+  .profile_name
+    = current_user.account
+  .profile_image
+    = image_tag 'default_avatar.png'
+  %ul.profile_detail 
+    %li
+      %p 44
+      %span Posts
+    %li
+      %p 110
+      %span Followers
+    %li
+      %p 44
+      %span Following
+  .profile_post
+    
+    

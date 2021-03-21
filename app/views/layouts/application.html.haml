@@ -9,6 +9,15 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
+    .status-bar 
+      .current-time
+        = image_tag 'Time Style.png'
+      .mobile-signal 
+        = image_tag 'Mobile Signal.png'
+      .wifi
+        = image_tag 'Wifi.png'
+      .battery
+        = image_tag 'Battery.png'
     %p.notice= notice
     %p.alert= alert
     = yield
