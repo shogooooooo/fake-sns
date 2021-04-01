@@ -11,6 +11,10 @@
 #
 #  index_profiles_on_user_id  (user_id)
 #
-class ProfileSerializer < ActiveModel::Serializer
-  attributes :avatar
+require 'test_helper'
+
+class ProfileTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
