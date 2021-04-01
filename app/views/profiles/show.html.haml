@@ -13,6 +13,7 @@
         - else
           = image_tag 'default_avatar.png', class: 'profile_avatar'
         = f.file_field :avatar, class: 'uploader', style: 'display:none'
+      = f.submit 'プロフィール画像を変更'
         
           
   %ul.profile_detail 
