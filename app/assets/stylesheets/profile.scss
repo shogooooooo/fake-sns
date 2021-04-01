@@ -1,0 +1,57 @@
+.profile {
+  &_back {
+    position: absolute;
+    left: 16px;
+    top: 52px;
+  }
+
+  &_name {
+    position: absolute;
+    top: 46px;
+    left: calc(50% - 20px);
+    font-weight: 500;
+    font-size: 16px;
+    color: #333a42;
+  }
+
+  &_image {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    left: 145px;
+    top: 102px;
+  }
+
+  &_detail {
+    position: absolute;
+    width: 241px;
+    height: 47px;
+    left: 75px;
+    top: 229px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 42px;
+
+    li {
+      display: inline-block;
+
+      p {
+        line-height: 24px;
+        color: #333a42;
+        text-align: center;
+      }
+
+      span {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #9e9e9e;
+        text-align: center;
+      }
+    }
+  }
+}
+
+

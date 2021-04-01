@@ -1,0 +1,30 @@
+.container 
+  .profile_back
+    - if !current_page?(root_path)
+      = link_to :back do
+        = image_tag 'Group.png', class: 'header_back'
+  .profile_name
+    = current_user.account
+  .profile_image
+    = form_with(url: profile_path, method: 'put', local: true) do |f|
+      = f.label :avatar do
+        - if @avatar&.attached?
+          = image_tag @avatar, class: 'profile_avatar'
+        - else
+          = image_tag 'default_avatar.png', class: 'profile_avatar'
+        = f.file_field :avatar, class: 'uploader', style: 'display:none'
+        
+          
+  %ul.profile_detail 
+    %li
+      %p 44
+      %span Posts
+    %li
+      %p 110
+      %span Followers
+    %li
+      %p 44
+      %span Following
+  .profile_post
+    
+    

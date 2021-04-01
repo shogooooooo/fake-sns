@@ -5,9 +5,9 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
-#  account                :string           default(""), not null
-#  email                  :string           default(""), not null
-#  encrypted_password     :string           default(""), not null
+#  account                :string
+#  email                  :string           not null
+#  encrypted_password     :string           not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -25,5 +25,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts,  dependent: :destroy
+
+  has_one_attached :avatar
+
   validates :account, uniqueness: true
+  validates :account, length: { minimum: 1}
+  validates :account, length: { maximum: 15}
 end
