@@ -6,7 +6,15 @@
   .profile_name
     = current_user.account
   .profile_image
-    = image_tag 'default_avatar.png'
+    = form_with(url: profile_path, method: 'put', local: true) do |f|
+      = f.label :avatar do
+        - if @avatar&.attached?
+          = image_tag @avatar, class: 'profile_avatar'
+        - else
+          = image_tag 'default_avatar.png', class: 'profile_avatar'
+        = f.file_field :avatar, class: 'uploader', style: 'display:none'
+        
+          
   %ul.profile_detail 
     %li
       %p 44
