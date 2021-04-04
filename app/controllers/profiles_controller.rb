@@ -1,7 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
-  def show; end
+  def show
+    
+  end
 
   def update
     @avatar = current_user.avatar
@@ -13,6 +15,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.permit(:avatar)
+    params.require(:user).permit(:avatar)
   end
 end
