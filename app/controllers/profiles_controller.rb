@@ -6,10 +6,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @avatar = curent_user.avatar.attach(params[:avatar])
-    
-    @avatar.update!
-
+    @avatar = current_user.avatar
+    @avatar.attach(params[:avatar])
+    @avatar.update!(profile_params)
     render json: @avatar
   end
 
