@@ -4,9 +4,11 @@ class ProfilesController < ApplicationController
   def show; end
 
   def update
-    @avatar = current_user.avatar
-    @avatar.attach(params[:avatar])
-    @avatar.update!(profile_params)
+    profile = Profile.new(profile_params)
+    profile.save
+    @avatar = current_user.profile.avatar
+    @avatar.attach(profile_params)
+    @avatar.update!
     render json: @avatar
   end
 
