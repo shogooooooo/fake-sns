@@ -6,16 +6,14 @@
   .profile_name
     = current_user.account
   .profile_image
-    = form_with(url: profile_path, method: 'put', local: true) do |f|
+    = form_with(url: user_registration_path, method: 'put', local: true) do |f|
       = f.label :avatar do
-        - if @avatar&.attached?
-          = image_tag @avatar, class: 'profile_avatar'
+        - if current_user.avatar&.attached?
+          = image_tag current_user.profile.avatar, class: 'profile_avatar'
         - else
           = image_tag 'default_avatar.png', class: 'profile_avatar'
         = f.file_field :avatar, class: 'uploader', style: 'display:none'
-      = f.submit 'プロフィール画像を変更'
-        
-          
+      = f.submit '画像を変更'
   %ul.profile_detail 
     %li
       %p 44

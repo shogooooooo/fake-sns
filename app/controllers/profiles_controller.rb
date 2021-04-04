@@ -1,20 +1,21 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
-  def show; end
+  def show
+    
+  end
 
   def update
-    profile = Profile.new(profile_params)
-    profile.save
-    @avatar = current_user.profile.avatar
-    @avatar.attach(profile_params)
+    @avatar = curent_user.avatar.attach(params[:avatar])
+    
     @avatar.update!
+
     render json: @avatar
   end
 
   private
 
   def profile_params
-    params.permit(:avatar)
+    params.require(:user).permit(:avatar)
   end
 end
