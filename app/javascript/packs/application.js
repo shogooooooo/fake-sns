@@ -32,5 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const image = reader.result;
       document.querySelector('.profile_avatar').setAttribute('src', image);
     }
+    
   });
 });

@@ -2,14 +2,17 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    
   end
 
   def update
-    @avatar = current_user.avatar
-    @avatar.attach(params[:avatar])
-    @avatar.update!(profile_params)
-    render json: @avatar
+    if current_user.avatar.attached?
+      @avatar = current_user.avatar
+    else 
+      @avatar = current_user.avatar.attach(params[:avatar])
+    end
+    if @avatar.update!(profile_params)
+      render json: @avatar
+      redirect_to profile_path
   end
 
   private

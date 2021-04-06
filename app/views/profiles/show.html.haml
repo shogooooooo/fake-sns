@@ -9,7 +9,7 @@
     = form_with(url: user_registration_path, method: 'put', local: true) do |f|
       = f.label :avatar do
         - if current_user.avatar&.attached?
-          = image_tag current_user.profile.avatar, class: 'profile_avatar'
+          = image_tag current_user.avatar, class: 'profile_avatar'
         - else
           = image_tag 'default_avatar.png', class: 'profile_avatar'
         = f.file_field :avatar, class: 'uploader', style: 'display:none'
