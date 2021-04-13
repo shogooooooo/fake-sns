@@ -27,11 +27,13 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  has_one :profile, dependent: :destroy
+
   has_one_attached :avatar
 
   validates :account, uniqueness: true
   validates :account, length: { minimum: 1 }
   validates :account, length: { maximum: 15 }
 
-
+ 
 end
