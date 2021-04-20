@@ -9,7 +9,7 @@
     = form_with(method: 'put', local: true) do |f|
       = f.label :avatar do
         - if @avatar&.attached?
-          = image_tag @avatar, class: 'profile_avatar'
+          = image_tag @avatar, class: 'profile_avatar', width: '76.88px', height: '76,88px'
         - else
           = image_tag 'default_avatar.png', class: 'profile_avatar'
         = f.file_field :avatar, class: 'uploader', style: 'display:none'
@@ -25,5 +25,8 @@
       %p 44
       %span Following
   .profile_post
-    
+    - current_user.posts.each do |post|
+      - post.images.each do |image|
+        = image_tag image
+
     

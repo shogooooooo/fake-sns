@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resource :profile, only: %i[show update]
 
-  resources :posts
+  resources :posts, only: %i[index new create] 
 end
