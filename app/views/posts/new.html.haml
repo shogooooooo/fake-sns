@@ -1,0 +1,19 @@
+.container 
+  .new_header 
+    = link_to 'Cancel', :back, class:'back_btn'
+    .new_header_title
+      %p Status
+    = form_with(model: @post, local: true) do |f|
+      = f.submit 'Post', class: 'send_post'
+      .user_status 
+        = image_tag @post.user.avatar, width: '40px', height: '40px', class: 'post_avatar_new'
+        .post_name
+          = @post.user.account
+      .write_text
+        = f.text_area :content, placeholder: ' What&apos;s on your mind? '.html_safe, class: 'text'
+      .file_post 
+        = f.label :images, '+ Album'
+        = f.file_field :images, multiple: true, style: 'display:none'
+        
+        
+

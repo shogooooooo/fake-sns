@@ -1,0 +1,116 @@
+.go_to_post{
+  margin-left: 16px;
+  margin-top: 49px;
+}
+.card{
+  margin: 43px 17px;
+}
+.post_avatar{
+  border-radius: 50%;
+  margin-top: 4.5px;
+  &_new{
+    margin-left: 16px;
+    border-radius: 50%;
+  }
+}
+.post_user{
+  margin-bottom: 11px;
+  display: flex;
+
+  &_detail{
+    display: block;
+    margin-left: 8px;
+
+    .user_name{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    .when_posted{
+      font-size: 12px;
+      line-height: 18px;
+      color: #9E9E9E;
+    }
+  }
+}
+.post_images{
+  margin-bottom: 12px;
+}
+.post_name{
+  margin-top: 7px;
+  margin-left: 18px;
+  font-weight: 500;
+}
+.post_engagements_btn{
+  margin-bottom: 8px;
+  display:flex;
+  justify-content: space-between;
+  width:76px;
+}
+.engagement_elements{
+  height: 16px;
+  width: 16px;
+}
+.who_liked{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+.content {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;  
+}
+.new_header{
+  font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    
+
+  .back_btn{
+    color: blue;
+    left: 16px;
+    top: 45px;
+    position: absolute;
+  }
+  .send_post{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;  
+    color: #BDBDBD;
+    left: 324px;
+    position: absolute;
+    top: 45px;
+  }
+  p{
+    left: 162px;
+    top: 45px;
+    position: absolute;
+  }
+}
+
+.user_status{
+  top: 111px;
+  position: absolute;
+  display: flex;
+}
+.write_text{
+  position:absolute;
+  margin: 181px 16px 0 16px;
+  border-bottom: 1px solid #9E9E9E;
+  width: 92%;
+  .text{
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.9;
+    height: 26px;
+  }
+}
+.file_post {
+  position:absolute;
+  left: 16px;
+  top: 239px;
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  padding: 3px 10px 1px 8px;
+}
