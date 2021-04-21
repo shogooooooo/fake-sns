@@ -11,7 +11,7 @@
             .user_name 
               = post.user.account
             .when_posted 
-              3 hours ago
+              = post.date
         .post_images 
           - post.images.each do |image|
             = image_tag image
@@ -19,7 +19,8 @@
           .post_engagements_btn
             = link_to image_tag ("inactive_heart.png"), class: 'engagement_elements'
             = link_to image_tag ("comment.png"), class: 'engagement_elements'
-            = image_tag 'share.png', class: 'engagement_elements'
+            = link_to "https://twitter.com/share?url=#{ request.url }", class: 'btn btn-default', target: '_blank' do
+              = image_tag 'share.png', class: 'engagement_elements'
           .who_liked 
             aaaa has liked your post
           .content 
@@ -28,11 +29,4 @@
 
 
 
-/ 
-  ユーザー画像
-  ユーザー名
-  何時間前に投稿されたか
-  投稿画像
-  ライク、コメント、シェアボタン
-  誰がライクしたか
-  コンテント表
+

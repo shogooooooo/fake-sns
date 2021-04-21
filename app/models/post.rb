@@ -18,4 +18,24 @@ class Post < ApplicationRecord
 
   validates :content, presence: true
   validates :images, presence: true
+
+  def display_created_at
+    I18n.l(self.created_at, format: :default)
+  end
+
+  def date
+    t = Time.zone.now - self.created_at
+    - if t < 60*60*24
+      t2= t/(24*60)
+      "#{t2.floor} hours ago"
+    else
+      self.display_created_at
+    end
+  end
 end
+
+
+#if within 24 hours ago
+ #"~hours ago"
+#else
+  #year/date
