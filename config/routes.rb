@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root to: 'posts#index'
   resource :profile, only: %i[show update]
-
-  resources :posts, only: %i[index new create] 
+  
+  resources :posts, only: %i[index new create] do
+    resource :like, only: %i[show create destroy]
+  end
 end

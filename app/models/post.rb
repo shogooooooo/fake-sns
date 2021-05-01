@@ -15,6 +15,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many_attached :images
+  has_many :likes, dependent: :destroy
 
   validates :content, presence: true
   validates :images, presence: true
@@ -26,7 +27,7 @@ class Post < ApplicationRecord
   def date
     t = Time.zone.now - self.created_at
     - if t < 60*60*24
-      t2= t/(24*60)
+      t2= t/(60*60)
       "#{t2.floor} hours ago"
     else
       self.display_created_at

@@ -1,9 +1,9 @@
 .container 
   .go_to_post
     = link_to image_tag("camera.png"), new_post_path
-  .posts 
+  .posts
     - @posts.each do |post|
-      .card 
+      .card#post-show{data: {post_id: post.id}}
         .post_user
           .user_image
             = image_tag post.user.avatar, class: 'post_avatar', width: '30px', height: '30px'
@@ -17,7 +17,11 @@
             = image_tag image
         .post_engagements
           .post_engagements_btn
-            = link_to image_tag ("inactive_heart.png"), class: 'engagement_elements'
+            - if user_signed_in?
+              .post_heart.hidden.active_heart{id: "#{post.id}"}
+                = image_tag 'active_heart.png',class: 'engagement_elements'
+              .post_heart.hidden.inactive_heart{id: "#{post.id}"}
+                = image_tag 'inactive_heart.png',class: 'engagement_elements'
             = link_to image_tag ("comment.png"), class: 'engagement_elements'
             = link_to "https://twitter.com/share?url=#{ request.url }", class: 'btn btn-default', target: '_blank' do
               = image_tag 'share.png', class: 'engagement_elements'
