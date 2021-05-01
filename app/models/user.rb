@@ -26,6 +26,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   has_one :profile, dependent: :destroy
 
@@ -35,5 +36,7 @@ class User < ApplicationRecord
   validates :account, length: { minimum: 1 }
   validates :account, length: { maximum: 15 }
 
- 
+ def has_liked?(post)
+  likes.exists?(post_id: post.id)
+ end
 end
